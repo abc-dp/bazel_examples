@@ -1,8 +1,8 @@
-genrule(
+load("//creating_a_macro:miniature.bzl", "miniature")
+
+miniature(
     name = "logo_miniature",
-    srcs = ["logo.png"],
-    outs = ["small_logo.png"],
-    cmd = "convert $< -resize 100x100 $@",
+    src = "logo.png",
 )
 
 cc_binary(
